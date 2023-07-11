@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <Header />
-      <Search />
       <Map />
     </>
   )
