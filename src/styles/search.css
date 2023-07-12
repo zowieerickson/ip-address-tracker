@@ -10,3 +10,8 @@
     background: #FFF;
     box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.10);
 }
+
+.search::placeholder {
+    opacity: .5;
+    color: #2C2C2C;
+}
