@@ -8,5 +8,8 @@ header {
 
 header h1 {
     color: #FFF;
-    margin-bottom: 31px;
+    margin-bottom: 32px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: -0.286px;
 }
