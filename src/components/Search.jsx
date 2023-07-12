@@ -1,7 +1,13 @@
 import '../styles/search.css'
 import SearchButton from './Button.jsx'
 
+export function handleSearch() {
+    console.log("ayo")   
+}
+
 export default function Search() {
+
+
 
     function handleKeyDown(e) {
         // If the user presses the "Enter" key on the keyboard
@@ -9,7 +15,7 @@ export default function Search() {
             // Cancel the default action, if needed
             e.preventDefault();
             // Trigger
-            console.log("ayo")
+            handleSearch()
         }
     }
 
@@ -23,7 +29,7 @@ export default function Search() {
             name="" 
             id="" 
             />
-            <SearchButton></SearchButton>
+            <SearchButton onClick={handleSearch}></SearchButton>
             
         </div>
     )
