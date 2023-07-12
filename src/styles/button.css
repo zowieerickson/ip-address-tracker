@@ -7,3 +7,7 @@ button {
     border-radius: 0 15px 15px 0;
     /* background-image: url("../assets/images/icon-arrow.svg"); */
 }
+
+.btn-search svg:active {
+    filter: invert(21%) sepia(1%) saturate(3396%) hue-rotate(314deg) brightness(88%) contrast(80%);
+}
