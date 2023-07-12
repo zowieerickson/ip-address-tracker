@@ -1,0 +1,45 @@
+.info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 3em;
+    width: 80%;
+    padding: 37px 32px;
+    border-radius: 15px;
+    background-color: #FFF;
+    box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.10);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+}
+
+.info-details {
+    text-align: left;
+    flex-grow: 99;
+}
+
+.info-details h2 {
+    margin-bottom: 13px;
+    color: #2C2C2C;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.75px;
+    text-transform: uppercase;
+}
+
+.info-details p {
+    color: #2C2C2C;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: -0.232px;
+}
+
+.vl {
+    max-width: 1px;
+    opacity: 0.15000000596046448;
+    background: #000;
+    height: 50%;
+    flex-grow: 1;
+}
