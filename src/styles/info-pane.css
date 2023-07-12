@@ -1,6 +1,6 @@
 .info {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    justify-content: space-between;
     margin-top: 3em;
     width: 80%;
     padding: 37px 32px;
@@ -16,7 +16,7 @@
 
 .info-details {
     text-align: left;
-    flex-grow: 99;
+    flex-grow: 1;
 }
 
 .info-details h2 {
@@ -38,9 +38,8 @@
 }
 
 .vl {
-    max-width: 1px;
+    min-width: 1px;
     opacity: 0.15000000596046448;
     background: #000;
-    height: 50%;
-    flex-grow: 1;
+    flex-grow: 0;
 }
