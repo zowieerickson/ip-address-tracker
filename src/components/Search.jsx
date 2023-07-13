@@ -6,9 +6,6 @@ export function handleSearch() {
 }
 
 export default function Search() {
-
-
-
     function handleKeyDown(e) {
         // If the user presses the "Enter" key on the keyboard
         if (e.key === "Enter") {
