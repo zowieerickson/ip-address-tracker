@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import InfoPane from "./InfoPane";
+import Header from "./Header";
 
 export default function DataWrapper() {
     const [initialIp, setInitialIp] = useState({});
@@ -22,10 +23,11 @@ export default function DataWrapper() {
       }, []);
       
       return (
-        <>
+        <header>
+            <Header />
             <InfoPane
                 data={data}
             />
-        </>
+        </header>
       )
 }
