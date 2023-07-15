@@ -24,9 +24,8 @@ export default function DataWrapper() {
       return (
         <>
             <InfoPane
-            data={data}
+                data={data}
             />
-          {data ? <h2 className="ip">{JSON.stringify(data.ip, null, 2)}</h2> : 'Loading...'}
         </>
       )
 }
