@@ -29,7 +29,7 @@ export default function InfoPane({ data }) {
             <section className="info-item ">
                 <div className="info-details">
                     <h2>Location</h2>
-                    <p>{data.location.city}, {data.location.region} {data.location.postalCode}</p>
+                    <p>{data.location.city}, {data.location.region}<br />{data.location.postalCode}</p>
                 </div>
             </section>
             <div className="vl"></div>
