@@ -20,15 +20,11 @@ export default function DataWrapper() {
           })
           .catch(error => setError(error));
       }, []);
-
       
-      console.log(initialIp)
-      console.log(data)
-
       return (
         <>
             <InfoPane
-            initialIp={initialIp.ip}
+            data={data}
             />
           {data ? <h2 className="ip">{JSON.stringify(data.ip, null, 2)}</h2> : 'Loading...'}
         </>
