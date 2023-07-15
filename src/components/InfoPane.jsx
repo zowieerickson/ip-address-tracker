@@ -20,30 +20,27 @@ export default function InfoPane({ data }) {
     return (
         <section className="info">
             <section className="info-item ">
-                <div className="info-details">
-                    <h2>IP Address</h2>
-                    <p>{data.ip}</p>
+                <div className="info-details first">
+                    <h2 className="info-details-title">IP Address</h2>
+                    <p className="info-details-body">{data.ip}</p>
                 </div>
             </section>
-            <div className="vl"></div>
             <section className="info-item ">
                 <div className="info-details">
-                    <h2>Location</h2>
-                    <p>{data.location.city}, {data.location.region}<br />{data.location.postalCode}</p>
+                    <h2 className="info-details-title">Location</h2>
+                    <p className="info-details-body">{data.location.city}, {data.location.region}<br />{data.location.postalCode}</p>
                 </div>
             </section>
-            <div className="vl"></div>
             <section className="info-item ">
                 <div className="info-details">
-                    <h2>Timezone</h2>
-                    <p>UTC {data.location.timezone}</p>
+                    <h2 className="info-details-title">Timezone</h2>
+                    <p className="info-details-body">UTC {data.location.timezone}</p>
                 </div>
             </section>
-            <div className="vl"></div>
             <section className="info-item ">
                 <div className="info-details">
-                    <h2>ISP</h2>
-                    <p>{data.isp}</p>
+                    <h2 className="info-details-title">ISP</h2>
+                    <p className="info-details-body">{data.isp}</p>
                 </div>
             </section>
         </section>
