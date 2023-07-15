@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import InfoPane from "./InfoPane";
 
 export default function DataWrapper() {
     const [initialIp, setInitialIp] = useState({});
@@ -21,12 +22,14 @@ export default function DataWrapper() {
       }, []);
 
       
-      console.log(error)
       console.log(initialIp)
       console.log(data)
 
       return (
         <>
+            <InfoPane
+            initialIp={initialIp.ip}
+            />
           {data ? <h2 className="ip">{JSON.stringify(data.ip, null, 2)}</h2> : 'Loading...'}
         </>
       )
