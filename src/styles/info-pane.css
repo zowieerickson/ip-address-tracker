@@ -1,9 +1,9 @@
 .info {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     width: 80%;
     margin: 0 auto;
-    padding: 2em 4em 1em 2em;
+    padding: 2em 4em .5em 2em;
     position: relative;
     top: -110px;
     border-radius: 15px;
