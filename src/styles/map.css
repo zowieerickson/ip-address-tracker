@@ -2,3 +2,7 @@
     height: 80vh;
     z-index: -1;
 }
+
+.leaflet-control-container {
+    display: none;
+}
