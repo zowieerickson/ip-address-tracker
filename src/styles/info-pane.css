@@ -1,7 +1,9 @@
 .info {
     display: flex;
     justify-content: space-between;
-    margin-top: 3em;
+    margin: 0 auto;
+    position:relative;
+    top: -70px;
     width: 80%;
     padding: 37px 32px;
     border-radius: 15px;
