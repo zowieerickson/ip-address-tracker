@@ -8,7 +8,6 @@ export default function Header() {
         <header>
             <h1>IP Address Tracker</h1>
             <Search></Search>
-            <InfoPane></InfoPane>
         </header>
     )
 }
