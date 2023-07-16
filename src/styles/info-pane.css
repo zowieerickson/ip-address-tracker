@@ -3,7 +3,7 @@
     grid-template-columns: repeat(4, 1fr);
     width: 80%;
     margin: 0 auto;
-    padding: 2em 4em .5em 2em;
+    padding: 2em 2em .5em 1em;
     position: relative;
     bottom: -75px;
     border-radius: 15px;
@@ -47,18 +47,6 @@
     /* End of vertical line styles */
 }
 
-.first .info-details-title {
-    padding-left: 0;
-}
-
 .first .info-details-body {
     border: none;
-    padding-left: 0;
-}
-
-.vl {
-    min-width: 1px;
-    opacity: 0.15000000596046448;
-    background: #000;
-    flex-grow: 0;
 }
