@@ -16,6 +16,7 @@ export default function Search({
     
     const [inputSearchValue, setInputSearchValue] = useState("")
 
+
     function updateInput(e) {
         setInputSearchValue(e.target.value)
     }
@@ -26,6 +27,7 @@ export default function Search({
             .then(response => response.json())
             .then(json => onStateChangeData(json))
             .catch(error => onStateChangeError(error));
+            console.log(data)
         }
       }, [inputSearch]);
     
@@ -35,7 +37,6 @@ export default function Search({
             onStateChangeInputSearch(e.target.value)
         }
     }
-    console.log(inputSearchValue)
 
     return (
         <div className="search-wrapper">

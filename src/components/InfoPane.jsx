@@ -15,8 +15,6 @@ export default function InfoPane({ data }) {
         return <div>Loading...</div>
     }
 
-    console.log(data)
-
     // 
     function stateNameToAbbreviation(name) {
         let states = {
