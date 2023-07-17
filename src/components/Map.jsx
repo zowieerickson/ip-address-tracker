@@ -2,6 +2,7 @@ import '../styles/map.css'
 import 'leaflet/dist/leaflet.css'
 import { useState } from 'react';
 import { MapContainer as LeafletMap,  Marker, Popup, TileLayer, useMap } from 'react-leaflet'
+import ErrorMessage from './ErrorMessage';
 
 
 // const ACCESS_TOKEN = "pk.eyJ1Ijoiem93aWVoZXlyZWFsIiwiYSI6ImNsazJqb28ycjBmdHkzZXExNDJzdDlheHEifQ.bqgdG7-FhnMhnjRASXlBYw";
@@ -14,7 +15,7 @@ const ATTRIBUTION =
   export default function Map({ data, lat, long }) {
 
     if (!data || !data.location || !data.location.lat) {
-        return <div>Loading...</div>;
+        return <ErrorMessage />
       }
 
     const TOWER_LOCATION = [27.43199, -82.39537];

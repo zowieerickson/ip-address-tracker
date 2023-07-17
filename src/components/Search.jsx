@@ -38,6 +38,8 @@ export default function Search({
         }
     }
 
+    
+
     return (
         <div className="search-wrapper">
             <input 

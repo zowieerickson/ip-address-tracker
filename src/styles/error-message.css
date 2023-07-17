@@ -1,0 +1,17 @@
+.error-wrapper {
+    width: 50%;
+    padding: 4em;
+    margin: 5em auto;
+    background-color: #fff;
+    border-radius: 0.5em;
+    box-shadow: 0 30px 60px #3d6cec26;
+}
+
+.error-title {
+    padding-top: 160px;
+    background-image: url(../assets/images/undraw_page_not_found_re_e9o6.svg);
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    background-position: center -26px;
+    padding-top: 11em;
+}
