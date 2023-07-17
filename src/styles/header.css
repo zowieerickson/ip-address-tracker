@@ -8,10 +8,23 @@ header {
     background-repeat: no-repeat;
 }
 
+@media screen and (max-width: 734px) {
+    header {
+        padding: 2.5em 1.5em 0em;
+    }
+}
+
 header h1 {
     color: #FFF;
     margin-bottom: 32px;
     font-weight: 500;
     line-height: 30px;
     letter-spacing: -0.286px;
+}
+
+@media screen and (max-width: 734px) {
+    header h1 {
+        font-size: 26px;
+        letter-spacing: -0.232px;
+    }
 }

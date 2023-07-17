@@ -3,6 +3,13 @@
     justify-content: center;
 }
 
+@media screen and (max-width: 734px) {
+    .search-wrapper {
+        width: 100%;
+        margin-bottom: 1.5em;
+    }
+}
+
 .search {
     width: 500px;
     padding: 15px 0px 16px 24px;
@@ -17,7 +24,17 @@
     caret-color: #000;
 }
 
+@media screen and (max-width: 734px) {
+    .search {
+        width: 100%;
+    }
+}
+
 .search::placeholder {
     opacity: .5;
     color: #2C2C2C;
+}
+
+.btn-search svg {
+    max-width: initial;
 }
