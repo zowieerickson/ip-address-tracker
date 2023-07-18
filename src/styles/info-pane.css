@@ -5,7 +5,8 @@
     margin: 0 auto;
     padding: 2em 2em .5em 1em;
     position: relative;
-    bottom: -75px;
+    bottom: -115px;
+    margin-top: -115px;
     border-radius: 15px;
     background-color: #FFF;
     box-shadow: 0px 50px 50px -25px rgba(0, 0, 0, 0.10);

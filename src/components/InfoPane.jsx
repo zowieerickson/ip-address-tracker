@@ -3,19 +3,11 @@ import "../styles/info-pane.css"
 export default function InfoPane({ data }) {
 
     
-    if (!data) {
-        return <div>Loading...</div>
+    if (!data || !data.location || !data.location.lat) {
+        return 
     }
 
-    if (!data.location) {
-        return <div>Loading...</div>
-    }
-
-    if (!data.location.timezone) {
-        return <div>Loading...</div>
-    }
-
-    // 
+    // State dictionary
     function stateNameToAbbreviation(name) {
         let states = {
             "arizona": "AZ",
