@@ -18,12 +18,7 @@ const ATTRIBUTION =
         return <ErrorMessage />
       }
 
-    const TOWER_LOCATION = [27.43199, -82.39537];
-    console.log("OLD LOC " + TOWER_LOCATION, TOWER_LOCATION)
-    const NEW_LOCATION = [lat, long]
-    console.log("NEW LOC " + NEW_LOCATION, NEW_LOCATION)
-
-    // let TOWER_LOCATION = [data.location.lat, data.location.lng];
+    const newLocation = [lat, long]
 
     function ChangeMapView({ coords }) {
         const map = useMap();
@@ -33,16 +28,16 @@ const ATTRIBUTION =
       }
 
     return (
-        <LeafletMap center={NEW_LOCATION} zoom={16}>
+        <LeafletMap center={newLocation} zoom={16}>
             <TileLayer url={URL} attribution={ATTRIBUTION} />
-            <Marker position={NEW_LOCATION}>
+            <Marker position={newLocation}>
             <Popup>
                 <b>Tower of Hercules</b>
                 <br />
                 UNESCO World Heritage site
             </Popup>
             </Marker>
-            <ChangeMapView coords={NEW_LOCATION} />
+            <ChangeMapView coords={newLocation} />
         </LeafletMap>
     )
 }
