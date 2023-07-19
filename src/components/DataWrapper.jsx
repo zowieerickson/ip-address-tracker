@@ -72,11 +72,12 @@ export default function DataWrapper() {
             />
             <InfoPane
                 data={data}
+                error={error}
             />
         </header>
         <Map
-            error={error}
             data={data}
+            error={error}
             lat={lat}
             long={long}
         />

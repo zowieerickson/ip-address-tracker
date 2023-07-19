@@ -23,6 +23,8 @@ const ATTRIBUTION =
 
     return (
       <>
+      {error.length > 1 ? 
+        <ErrorMessage /> :
         <LeafletMap center={newLocation} zoom={16}>
             <TileLayer url={URL} attribution={ATTRIBUTION} />
             <Marker position={newLocation}>
@@ -34,6 +36,7 @@ const ATTRIBUTION =
             </Marker>
             <ChangeMapView coords={newLocation} />
         </LeafletMap>
+      }
       </>
     )
 }
