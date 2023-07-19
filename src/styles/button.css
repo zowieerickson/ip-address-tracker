@@ -7,3 +7,11 @@
 .btn-search svg:active {
     filter: invert(21%) sepia(1%) saturate(3396%) hue-rotate(314deg) brightness(88%) contrast(80%);
 }
+
+button:focus-visible, input:focus-visible {
+    outline: 4px solid #3ca2d8;
+}
+
+input:focus-visible {
+    z-index: 1;
+}

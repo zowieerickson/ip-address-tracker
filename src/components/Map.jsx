@@ -22,7 +22,7 @@ const ATTRIBUTION =
       }
 
     return (
-      <>
+      <main>
       {error.length > 1 ? 
         <ErrorMessage /> :
         <LeafletMap center={newLocation} zoom={16}>
@@ -37,6 +37,6 @@ const ATTRIBUTION =
             <ChangeMapView coords={newLocation} />
         </LeafletMap>
       }
-      </>
+      </main>
     )
 }
