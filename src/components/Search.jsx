@@ -48,14 +48,13 @@ export default function Search({
 
     return (
         <div className="search-wrapper">
-            {error.length > 1 && <p>Invalid Search!</p>}
             <input 
             onChange={updateInput}
             onKeyDown={handleKeyDown}
             value={inputSearchValue}
             type="search" 
             className="search" 
-            placeholder="Search for any IP address or domain" 
+            placeholder={window.innerWidth > 450 ? "Search for any IP address or domain" : "Search IP addresses"}
             name="" 
             id="" 
             />
