@@ -23,11 +23,19 @@ export default function Search({
 
     useEffect(() => {
         if (inputSearch) {
-          fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_l362GxODBiG9tJIJfKdhGQ4ohag3l&ipAddress=${inputSearch}`)
-            .then(response => response.json())
+          fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_Lpk6ACLoZBGus7XaUqEKrdZWarErf&ipAddress=${inputSearch}`)
+          .then(response => {
+              if(!response.ok) {
+                  throw new Error('Data not found');
+                } else {
+                    onStateChangeError('')
+                    return response.json()
+                }
+            })
             .then(json => onStateChangeData(json))
-            .catch(error => onStateChangeError(error));
-            console.log(data)
+            .catch(error => {
+                onStateChangeError(error.message)
+            });
         }
       }, [inputSearch]);
     
@@ -38,10 +46,9 @@ export default function Search({
         }
     }
 
-    
-
     return (
         <div className="search-wrapper">
+            {error.length > 1 && <p>Invalid Search!</p>}
             <input 
             onChange={updateInput}
             onKeyDown={handleKeyDown}

@@ -1,6 +1,5 @@
 import '../styles/map.css'
 import 'leaflet/dist/leaflet.css'
-import { useState } from 'react';
 import { MapContainer as LeafletMap,  Marker, Popup, TileLayer, useMap } from 'react-leaflet'
 import ErrorMessage from './ErrorMessage';
 
@@ -12,12 +11,7 @@ const ATTRIBUTION =
   'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
 
   
-  export default function Map({ data, lat, long }) {
-
-    if (!data || !data.location || !data.location.lat) {
-        return <ErrorMessage />
-      }
-
+  export default function Map({ data, error, lat, long }) {
     const newLocation = [lat, long]
 
     function ChangeMapView({ coords }) {
@@ -28,6 +22,7 @@ const ATTRIBUTION =
       }
 
     return (
+      <>
         <LeafletMap center={newLocation} zoom={16}>
             <TileLayer url={URL} attribution={ATTRIBUTION} />
             <Marker position={newLocation}>
@@ -39,5 +34,6 @@ const ATTRIBUTION =
             </Marker>
             <ChangeMapView coords={newLocation} />
         </LeafletMap>
+      </>
     )
 }

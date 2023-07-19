@@ -11,6 +11,7 @@ export default function DataWrapper() {
     const [inputSearch, setInputSearch] = useState('')
     const [lat, setLat] = useState('')
     const [long, setLong] = useState('')
+    const [isLoading, setIsLoading] = useState(true)
 
     const handleStateChangeData = (newValue) => {
         setData(newValue)
@@ -32,15 +33,15 @@ export default function DataWrapper() {
         fetch(`https://api.ipify.org?format=json`)
           .then((response) => response.json())
           .then((json) => {
-            setInitialIp(json);
+            setInitialIp(json.ip);
           })
           .catch((error) => setError(error));
       }, []);
-    
+
       useEffect(() => {
-        if (initialIp.ip) {
+        if (initialIp) {
           fetch(
-            `https://geo.ipify.org/api/v2/country,city?apiKey=at_Lpk6ACLoZBGus7XaUqEKrdZWarErf&ipAddress=${initialIp.ip}`
+            `https://geo.ipify.org/api/v2/country,city?apiKey=at_Lpk6ACLoZBGus7XaUqEKrdZWarErf&ipAddress=${initialIp}`
           )
             .then((response) => response.json())
             .then((json) => setData(json))
@@ -53,11 +54,7 @@ export default function DataWrapper() {
           setLat(data.location.lat);
           setLong(data.location.lng);
         }
-      }, [data]);
-      
-    //   if (!data || !data.location || !data.location.lat) {
-    //     return <div>Loading...</div>;
-    //   }
+      }, [data.location]);
 
       return (
         <>
@@ -77,7 +74,8 @@ export default function DataWrapper() {
                 data={data}
             />
         </header>
-        <Map 
+        <Map
+            error={error}
             data={data}
             lat={lat}
             long={long}
