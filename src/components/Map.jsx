@@ -24,6 +24,11 @@ const ATTRIBUTION =
 
   
   export default function Map({ data, error, lat, long }) {
+    if (!data || !data.location || !data.location.lat) {
+      return 
+  }
+  console.log(data)
+
     const newLocation = [lat, long]
 
     function ChangeMapView({ coords }) {
@@ -33,6 +38,7 @@ const ATTRIBUTION =
         return null;
       }
 
+
     return (
       <>
       {error.length > 1 ? 
@@ -41,9 +47,9 @@ const ATTRIBUTION =
             <TileLayer url={URL} attribution={ATTRIBUTION} />
             <Marker position={newLocation}>
             <Popup>
-                <b>Tower of Hercules</b>
+                <b>{data.ip}</b>
                 <br />
-                UNESCO World Heritage site
+                {data.location.city}, {data.location.region}, {data.location.country}
             </Popup>
             </Marker>
             <ChangeMapView coords={newLocation} />
