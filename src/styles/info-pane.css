@@ -32,8 +32,16 @@
         align-items: center;
         gap: 24px;
         padding: 26px 1.5em 1.5em;
-        margin-top: -170px;
-        bottom: -170px;
+
+        /* These styles make the InfoPane sit halfway
+         on the map and header. However, it disrupts the UX on mobile.
+         Resetting values to 0 so the InfoPane sits only on the header
+         it for now until a better solution comes */        
+
+        /* margin-top: -170px;
+        bottom: -170px; */
+        margin-top: 0;
+        bottom: 0;
     }
 }
 
