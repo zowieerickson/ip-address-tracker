@@ -1,7 +1,19 @@
+import L from 'leaflet';
+import { MapContainer,  Marker, Popup, TileLayer, useMap } from 'react-leaflet'
+import ErrorMessage from './ErrorMessage';
 import '../styles/map.css'
 import 'leaflet/dist/leaflet.css'
-import { MapContainer as LeafletMap,  Marker, Popup, TileLayer, useMap } from 'react-leaflet'
-import ErrorMessage from './ErrorMessage';
+
+
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+let DefaultIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow
+});
+
+L.Marker.prototype.options.icon = DefaultIcon;
 
 
 // const ACCESS_TOKEN = "pk.eyJ1Ijoiem93aWVoZXlyZWFsIiwiYSI6ImNsazJqb28ycjBmdHkzZXExNDJzdDlheHEifQ.bqgdG7-FhnMhnjRASXlBYw";
@@ -25,7 +37,7 @@ const ATTRIBUTION =
       <main>
       {error.length > 1 ? 
         <ErrorMessage /> :
-        <LeafletMap center={newLocation} zoom={16}>
+        <MapContainer center={newLocation} zoom={16}>
             <TileLayer url={URL} attribution={ATTRIBUTION} />
             <Marker position={newLocation}>
             <Popup>
@@ -35,7 +47,7 @@ const ATTRIBUTION =
             </Popup>
             </Marker>
             <ChangeMapView coords={newLocation} />
-        </LeafletMap>
+        </MapContainer>
       }
       </main>
     )
