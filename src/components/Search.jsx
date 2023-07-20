@@ -23,7 +23,7 @@ export default function Search({
 
     useEffect(() => {
         if (inputSearch) {
-          fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_Lpk6ACLoZBGus7XaUqEKrdZWarErf&ipAddress=${inputSearch}`)
+          fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_eDKMcV2xt90NAI5eZh747DLEmo7mb&ipAddress=${inputSearch}`)
           .then(response => {
               if(!response.ok) {
                   throw new Error('Data not found');

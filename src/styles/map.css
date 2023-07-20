@@ -13,3 +13,7 @@
 .leaflet-control-container {
     display: none;
 }
+
+.leaflet-container .leaflet-marker-pane img {
+    width: 40px;
+}

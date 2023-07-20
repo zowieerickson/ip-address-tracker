@@ -41,7 +41,7 @@ export default function DataWrapper() {
       useEffect(() => {
         if (initialIp) {
           fetch(
-            `https://geo.ipify.org/api/v2/country,city?apiKey=at_Lpk6ACLoZBGus7XaUqEKrdZWarErf&ipAddress=${initialIp}`
+            `https://geo.ipify.org/api/v2/country,city?apiKey=at_eDKMcV2xt90NAI5eZh747DLEmo7mb&ipAddress=${initialIp}`
           )
             .then((response) => response.json())
             .then((json) => setData(json))
