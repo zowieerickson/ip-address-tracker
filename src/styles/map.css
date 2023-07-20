@@ -5,7 +5,7 @@
 
 @media screen and (max-width: 734px) {
     .leaflet-container { 
-        height: 80vh;
+        height: 85vh;
         z-index: 1;
     }
 }
