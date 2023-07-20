@@ -34,7 +34,7 @@ const ATTRIBUTION =
       }
 
     return (
-      <main>
+      <>
       {error.length > 1 ? 
         <ErrorMessage /> :
         <MapContainer center={newLocation} zoom={16}>
@@ -49,6 +49,6 @@ const ATTRIBUTION =
             <ChangeMapView coords={newLocation} />
         </MapContainer>
       }
-      </main>
+      </>
     )
 }
