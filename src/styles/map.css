@@ -3,6 +3,13 @@
     z-index: -1;
 }
 
+@media screen and (max-width: 734px) {
+    .leaflet-container { 
+        height: 95vh;
+        z-index: 1;
+    }
+}
+
 .leaflet-control-container {
     display: none;
 }
