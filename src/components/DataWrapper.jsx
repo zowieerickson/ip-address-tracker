@@ -5,7 +5,7 @@ import Search from "./Search";
 import Map from "./Map";
 
 export default function DataWrapper() {
-    const [initialIp, setInitialIp] = useState({});
+    const [initialIp, setInitialIp] = useState(null);
     const [data, setData] = useState({})
     const [error, setError] = useState({});
     const [inputSearch, setInputSearch] = useState('')
