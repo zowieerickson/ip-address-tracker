@@ -31,8 +31,7 @@ const ATTRIBUTION =
     if (!data || !data.location || !data.location.lat) {
       return 
   }
-  console.log(data)
-
+  
     const newLocation = [lat, long]
 
     function ChangeMapView({ coords }) {

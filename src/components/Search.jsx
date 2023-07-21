@@ -16,14 +16,22 @@ export default function Search({
     
     const [inputSearchValue, setInputSearchValue] = useState("")
 
+    // Check if the search input is an IP address or a domain
+    const isIpAddress = /^(\d{1,3}\.){3}\d{1,3}$/.test(inputSearchValue);
+
+    // Perform the API request based on whether it's an IP address or a domain
+    const apiUrl = isIpAddress
+    ? `https://geo.ipify.org/api/v2/country,city?apiKey=at_F5aA70UUuNN3aFAfdfrlSS2Z9MMA3&ipAddress=${inputSearchValue}`
+    : `https://geo.ipify.org/api/v2/country,city?apiKey=at_F5aA70UUuNN3aFAfdfrlSS2Z9MMA3&domain=${inputSearchValue}`;
 
     function updateInput(e) {
         setInputSearchValue(e.target.value)
     }
 
     useEffect(() => {
+
         if (inputSearch) {
-          fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_eDKMcV2xt90NAI5eZh747DLEmo7mb&ipAddress=${inputSearch}`)
+          fetch(apiUrl)
           .then(response => {
               if(!response.ok) {
                   throw new Error('Data not found');
