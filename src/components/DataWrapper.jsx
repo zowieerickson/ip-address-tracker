@@ -9,9 +9,6 @@ export default function DataWrapper() {
     const [data, setData] = useState({})
     const [error, setError] = useState({});
     const [inputSearch, setInputSearch] = useState('')
-    const [lat, setLat] = useState('')
-    const [long, setLong] = useState('')
-    const [isLoading, setIsLoading] = useState(true)
 
     const handleStateChangeData = (newValue) => {
         setData(newValue)
@@ -21,12 +18,6 @@ export default function DataWrapper() {
     }
     const handleStateChangeInputSearch = (newValue) => {
         setInputSearch(newValue)
-    }
-    const handleStateChangeLatitude = (newValue) => {
-        setLat(newValue)
-    }
-    const handleStateChangeLongitude = (newValue) => {
-        setLong(newValue)
     }
 
     useEffect(() => {
@@ -48,13 +39,6 @@ export default function DataWrapper() {
             .catch((error) => setError(error));
         }
       }, [initialIp]);
-  
-      useEffect(() => {
-        if (data.location) {
-          setLat(data.location.lat);
-          setLong(data.location.lng);
-        }
-      }, [data.location]);
 
       return (
         <>
@@ -64,8 +48,6 @@ export default function DataWrapper() {
                 data={data}
                 error={error}
                 inputSearch={inputSearch}
-                lat={lat}
-                long={long}
                 onStateChangeData={handleStateChangeData}
                 onStateChangeError={handleStateChangeError}
                 onStateChangeInputSearch={handleStateChangeInputSearch}
@@ -78,8 +60,6 @@ export default function DataWrapper() {
         <Map
             data={data}
             error={error}
-            lat={lat}
-            long={long}
         />
       </>
 

@@ -5,8 +5,6 @@ import LocationIcon from '../assets/images/icon-location.svg';
 import 'leaflet/dist/leaflet.css'
 
 
-
-import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
 let DefaultIcon = L.icon({
@@ -27,12 +25,12 @@ const ATTRIBUTION =
   'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
 
   
-  export default function Map({ data, error, lat, long }) {
+  export default function Map({ data, error }) {
     if (!data || !data.location || !data.location.lat) {
       return 
   }
   
-    const newLocation = [lat, long]
+    const newLocation = [data.location.lat, data.location.lng]
 
     function ChangeMapView({ coords }) {
         const map = useMap();
