@@ -2,50 +2,39 @@ import L from 'leaflet';
 import { MapContainer,  Marker, Popup, TileLayer, useMap } from 'react-leaflet'
 import ErrorMessage from './ErrorMessage';
 import LocationIcon from '../assets/images/icon-location.svg';
-import 'leaflet/dist/leaflet.css'
-
-
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+import 'leaflet/dist/leaflet.css'
+import '../styles/map.css'
 
 let DefaultIcon = L.icon({
     iconUrl: LocationIcon,
     shadowUrl: iconShadow
 });
-
-import '../styles/map.css'
-
-
 L.Marker.prototype.options.icon = DefaultIcon;
 
 
-// const ACCESS_TOKEN = "pk.eyJ1Ijoiem93aWVoZXlyZWFsIiwiYSI6ImNsazJqb28ycjBmdHkzZXExNDJzdDlheHEifQ.bqgdG7-FhnMhnjRASXlBYw";
-// const URL = `https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=${ACCESS_TOKEN}`;
-const URL = `https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`;
-const ATTRIBUTION =
-  'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+// Stadia Map
+const URL = `https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png`;
 
-  
   export default function Map({ data, error }) {
     if (!data || !data.location || !data.location.lat) {
       return 
-  }
+    }
   
     const newLocation = [data.location.lat, data.location.lng]
 
     function ChangeMapView({ coords }) {
         const map = useMap();
         map.setView(coords, map.getZoom());
-      
         return null;
       }
-
 
     return (
       <>
       {error.length > 1 ? 
         <ErrorMessage /> :
         <MapContainer center={newLocation} zoom={16}>
-            <TileLayer url={URL} attribution={ATTRIBUTION} />
+            <TileLayer url={URL} />
             <Marker position={newLocation}>
             <Popup>
                 <b>{data.ip}</b>
