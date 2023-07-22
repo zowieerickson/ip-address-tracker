@@ -21,7 +21,7 @@ export default function DataWrapper() {
     }
 
     useEffect(() => {
-        fetch(`https://api.ipify.org?format=json`)
+        fetch(`https://ipapi.co/json/`)
           .then((response) => response.json())
           .then((json) => {
             setInitialIp(json.ip);
