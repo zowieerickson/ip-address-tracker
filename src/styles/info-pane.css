@@ -38,10 +38,10 @@
          Resetting values to 0 so the InfoPane sits only on the header
          it for now until a better solution comes */        
 
-        /* margin-top: -170px;
-        bottom: -170px; */
-        margin-top: 0;
-        bottom: 0;
+        margin-top: -170px;
+        bottom: -170px;
+        /* margin-top: 0;
+        bottom: 0; */
     }
 }
 
