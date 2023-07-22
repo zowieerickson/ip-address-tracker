@@ -3,6 +3,7 @@ import InfoPane from "./InfoPane";
 import Header from "./Header";
 import Search from "./Search";
 import Map from "./Map";
+import API_KEY from "../apikey.jsx"
 
 export default function DataWrapper() {
     const [initialIp, setInitialIp] = useState(null);
@@ -31,7 +32,7 @@ export default function DataWrapper() {
 
       useEffect(() => {
         if (initialIp) {
-          fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_F5aA70UUuNN3aFAfdfrlSS2Z9MMA3&ipAddress=${initialIp}`)
+          fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${initialIp}`)
             .then((response) => response.json())
             .then((json) => setData(json))
             .catch((error) => setError(error));
