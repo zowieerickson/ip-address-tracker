@@ -1,7 +1,7 @@
 import L from 'leaflet';
 import { MapContainer,  Marker, Popup, TileLayer, useMap } from 'react-leaflet'
 import ErrorMessage from './ErrorMessage';
-import LocationIcon from '../assets/images/icon-location.svg';
+import LocationIcon from '../assets/images/icon-location-black.svg';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import 'leaflet/dist/leaflet.css'
 import '../styles/map.css'
