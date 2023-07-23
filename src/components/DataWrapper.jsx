@@ -32,7 +32,8 @@ export default function DataWrapper() {
 
       useEffect(() => {
         if (initialIp) {
-          fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${initialIp}`)
+          // fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${initialIp}`)
+          fetch(`/.netlify/functions/getIPAddress?ipAddress=${initialIp}`)
             .then((response) => response.json())
             .then((json) => setData(json))
             .catch((error) => setError(error));
