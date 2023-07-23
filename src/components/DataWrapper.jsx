@@ -3,7 +3,6 @@ import InfoPane from "./InfoPane";
 import Header from "./Header";
 import Search from "./Search";
 import Map from "./Map";
-import API_KEY from "../apikey.jsx"
 
 export default function DataWrapper() {
     const [initialIp, setInitialIp] = useState(null);

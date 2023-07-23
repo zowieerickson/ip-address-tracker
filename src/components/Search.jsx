@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import SearchButton from './Button.jsx'
-import API_KEY from "../apikey.jsx"
 import '../styles/search.css'
 
 export function handleSearch(e) {
@@ -22,8 +21,8 @@ export default function Search({
 
     // Perform the API request based on whether it's an IP address or a domain
     const apiUrl = isIpAddress
-    ? `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${inputSearchValue}`
-    : `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&domain=${inputSearchValue}`;
+    ? `https://geo.ipify.org/api/v2/country,city?apiKey=at_F5aA70UUuNN3aFAfdfrlSS2Z9MMA3&ipAddress=${inputSearchValue}`
+    : `https://geo.ipify.org/api/v2/country,city?apiKey=at_F5aA70UUuNN3aFAfdfrlSS2Z9MMA3&domain=${inputSearchValue}`;
 
     function updateInput(e) {
         setInputSearchValue(e.target.value)
