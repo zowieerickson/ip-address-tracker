@@ -3,11 +3,11 @@ import SearchButton from './Button.jsx'
 import '../styles/search.css'
 
 export default function Search({
-    inputSearch,
-    onStateChangeInputSearch,
     onStateChangeData,
-    onStateChangeError }) {
+    onStateChangeError 
+}) {
     
+    const [inputSearch, setInputSearch] = useState("")
     const [inputSearchValue, setInputSearchValue] = useState("")
 
     // Check if the search input is an IP address or a domain
@@ -34,7 +34,9 @@ export default function Search({
                     return response.json()
                 }
             })
-            .then(json => onStateChangeData(json))
+            .then(json => {
+                onStateChangeData(json)
+            })
             .catch(error => {
                 onStateChangeError(error.message)
             });
@@ -44,7 +46,7 @@ export default function Search({
     function handleKeyDown(e) {
         if (e.key === "Enter") {
             e.preventDefault();
-            onStateChangeInputSearch(e.target.value)
+            setInputSearch(e.target.value)
         }
     }
 
@@ -59,7 +61,7 @@ export default function Search({
             placeholder={window.innerWidth > 450 ? "Search for any IP address or domain" : "Search IP addresses"}
             name="q" 
             />
-            <SearchButton onClick={e => onStateChangeInputSearch(inputSearchValue)}></SearchButton>
+            <SearchButton onClick={e => setInputSearch(inputSearchValue)}></SearchButton>
         </div>
     )
 }

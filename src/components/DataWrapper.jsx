@@ -1,22 +1,16 @@
 import { useState, useEffect } from "react";
-import InfoPane from "./InfoPane";
 import Header from "./Header";
-import Search from "./Search";
 import Map from "./Map";
 
 export default function DataWrapper() {
     const [data, setData] = useState({})
     const [error, setError] = useState({});
-    const [inputSearch, setInputSearch] = useState('')
 
     const handleStateChangeData = (newValue) => {
         setData(newValue)
     }
     const handleStateChangeError = (newValue) => {
         setError(newValue)
-    }
-    const handleStateChangeInputSearch = (newValue) => {
-        setInputSearch(newValue)
     }
 
     useEffect(() => {
@@ -44,10 +38,8 @@ export default function DataWrapper() {
         <Header 
             data={data}
             error={error}
-            inputSearch={inputSearch}
             onStateChangeData={handleStateChangeData}
             onStateChangeError={handleStateChangeError}
-            onStateChangeInputSearch={handleStateChangeInputSearch}
         />
         <Map
             data={data}

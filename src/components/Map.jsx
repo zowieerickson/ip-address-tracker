@@ -12,7 +12,6 @@ let DefaultIcon = L.icon({
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
-
 // Stadia Map
 const URL = `https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png`;
 
@@ -20,7 +19,7 @@ const URL = `https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png`;
     if (!data || !data.location || !data.location.lat) {
       return 
     }
-  
+
     const newLocation = [data.location.lat, data.location.lng]
 
     function ChangeMapView({ coords }) {
