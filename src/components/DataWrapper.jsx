@@ -5,7 +5,6 @@ import Search from "./Search";
 import Map from "./Map";
 
 export default function DataWrapper() {
-    // const [initialIp, setInitialIp] = useState(null);
     const [data, setData] = useState({})
     const [error, setError] = useState({});
     const [inputSearch, setInputSearch] = useState('')
@@ -39,24 +38,6 @@ export default function DataWrapper() {
 
       fetchData()
     }, [])
-
-    // useEffect(() => {
-    //     fetch(`https://ipapi.co/json/`)
-    //       .then((response) => response.json())
-    //       .then((json) => {
-    //         setInitialIp(json.ip);
-    //       })
-    //       .catch((error) => setError(error));
-    //   }, []);
-
-    //   useEffect(() => {
-    //     if (initialIp) {
-    //       fetch(`/.netlify/functions/getIPAddress?ipAddress=${initialIp}`)
-    //         .then((response) => response.json())
-    //         .then((json) => setData(json))
-    //         .catch((error) => setError(error));
-    //     }
-    //   }, [initialIp]);
 
       return (
         <>
