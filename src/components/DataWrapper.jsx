@@ -5,7 +5,7 @@ import Search from "./Search";
 import Map from "./Map";
 
 export default function DataWrapper() {
-    const [initialIp, setInitialIp] = useState(null);
+    // const [initialIp, setInitialIp] = useState(null);
     const [data, setData] = useState({})
     const [error, setError] = useState({});
     const [inputSearch, setInputSearch] = useState('')
@@ -21,22 +21,42 @@ export default function DataWrapper() {
     }
 
     useEffect(() => {
-        fetch(`https://ipapi.co/json/`)
-          .then((response) => response.json())
-          .then((json) => {
-            setInitialIp(json.ip);
-          })
-          .catch((error) => setError(error));
-      }, []);
+      const fetchData = async () => {
+        try {
+          // First API call to fetch User's IP Address
+          const userIpResponse = await fetch(`https://ipapi.co/json/`)
+          const userIpData = await userIpResponse.json()
+          const userIp = await userIpData.ip
 
-      useEffect(() => {
-        if (initialIp) {
-          fetch(`/.netlify/functions/getIPAddress?ipAddress=${initialIp}`)
-            .then((response) => response.json())
-            .then((json) => setData(json))
-            .catch((error) => setError(error));
+          // Second API call to fetch complete User's IP Address information
+          const userInformationResponse = await fetch(`/.netlify/functions/getIPAddress?ipAddress=${userIp}`)
+          const userInformation = await userInformationResponse.json()
+          setData(userInformation)
+        } catch(error) {
+          setError(error)
         }
-      }, [initialIp]);
+      }
+
+      fetchData()
+    }, [])
+
+    // useEffect(() => {
+    //     fetch(`https://ipapi.co/json/`)
+    //       .then((response) => response.json())
+    //       .then((json) => {
+    //         setInitialIp(json.ip);
+    //       })
+    //       .catch((error) => setError(error));
+    //   }, []);
+
+    //   useEffect(() => {
+    //     if (initialIp) {
+    //       fetch(`/.netlify/functions/getIPAddress?ipAddress=${initialIp}`)
+    //         .then((response) => response.json())
+    //         .then((json) => setData(json))
+    //         .catch((error) => setError(error));
+    //     }
+    //   }, [initialIp]);
 
       return (
         <>
