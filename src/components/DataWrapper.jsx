@@ -41,21 +41,14 @@ export default function DataWrapper() {
 
       return (
         <>
-        <header>
-            <Header />
-            <Search 
-                data={data}
-                error={error}
-                inputSearch={inputSearch}
-                onStateChangeData={handleStateChangeData}
-                onStateChangeError={handleStateChangeError}
-                onStateChangeInputSearch={handleStateChangeInputSearch}
-            />
-            <InfoPane
-                data={data}
-                error={error}
-            />
-        </header>
+        <Header 
+            data={data}
+            error={error}
+            inputSearch={inputSearch}
+            onStateChangeData={handleStateChangeData}
+            onStateChangeError={handleStateChangeError}
+            onStateChangeInputSearch={handleStateChangeInputSearch}
+        />
         <Map
             data={data}
             error={error}
