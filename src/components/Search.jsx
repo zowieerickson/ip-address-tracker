@@ -61,8 +61,7 @@ export default function Search({
             type="search" 
             className="search" 
             placeholder={window.innerWidth > 450 ? "Search for any IP address or domain" : "Search IP addresses"}
-            name="" 
-            id="" 
+            name="q" 
             />
             <SearchButton onClick={e => onStateChangeInputSearch(inputSearchValue)}></SearchButton>
         </div>
