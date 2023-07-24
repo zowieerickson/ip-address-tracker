@@ -15,7 +15,11 @@ L.Marker.prototype.options.icon = DefaultIcon;
 // Stadia Map
 const URL = `https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png`;
 
-  export default function Map({ data, error }) {
+  export default function Map({
+    data,
+    error 
+  }) {
+
     if (!data || !data.location || !data.location.lat) {
       return 
     }

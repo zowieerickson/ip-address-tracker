@@ -35,9 +35,9 @@
 
         /* These styles make the InfoPane sit halfway
          on the map and header. However, it disrupts the UX on mobile.
-         Resetting values to 0 so the InfoPane sits only on the header
-         it for now until a better solution comes */        
-        /* margin-top: -170px;
+         Resetting values to 0 for mobile so the InfoPane sits only on the header
+         until a better UX solution comes      
+        margin-top: -170px;
         bottom: -170px;
         z-index: 2; */
 
@@ -118,7 +118,6 @@
         font-size: 20px;
         line-height: 24px;
         letter-spacing: -0.179px;
-
     }
 }
 

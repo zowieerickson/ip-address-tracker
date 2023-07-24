@@ -15,7 +15,6 @@ export default function Header({
             <Search 
                 onStateChangeError={onStateChangeError}
                 onStateChangeData={onStateChangeData}
-                
             />
             <InfoPane 
                 data={data}
