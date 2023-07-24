@@ -2,10 +2,6 @@ import { useState, useEffect } from 'react'
 import SearchButton from './Button.jsx'
 import '../styles/search.css'
 
-export function handleSearch(e) {
-    onStateChangeInputSearch(e.target.value)
-}
-
 export default function Search({
     inputSearch,
     onStateChangeInputSearch,
