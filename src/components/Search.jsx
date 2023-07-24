@@ -9,9 +9,7 @@ export function handleSearch(e) {
 export default function Search({
     inputSearch,
     onStateChangeInputSearch,
-    data,
     onStateChangeData,
-    error,
     onStateChangeError }) {
     
     const [inputSearchValue, setInputSearchValue] = useState("")

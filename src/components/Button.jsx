@@ -1,5 +1,4 @@
 import '../styles/button.css'
-// import { handleSearch } from './Search.jsx'
 
 function Button({buttonClass, onClick, children, }) {
     return (

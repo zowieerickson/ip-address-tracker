@@ -14,10 +14,6 @@
   -webkit-text-size-adjust: 100%;
 }
 
-#map {
-  height: 180px; 
-}
-
 /* CSS Reset */
 *, *::before, *::after {
   box-sizing: border-box;

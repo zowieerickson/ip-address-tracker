@@ -2,7 +2,6 @@ import "../styles/info-pane.css"
 
 export default function InfoPane({ data, error }) {
 
-    
     if (!data || !data.location || !data.location.lat) {
         return 
     }
