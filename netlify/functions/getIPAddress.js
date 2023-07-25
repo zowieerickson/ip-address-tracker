@@ -1,5 +1,3 @@
-// netlify/functions/getIPAddress.js
-
 const axios = require('axios');
 
 exports.handler = async (event, context) => {
