@@ -14,12 +14,21 @@ export default function DataWrapper() {
     }
 
     useEffect(() => {
+      const cachedIp = localStorage.getItem('userIp')
+
       const fetchData = async () => {
         try {
-          // First API call to fetch User's IP Address
+          let userIp;
+          if (cachedIp) {
+            userIp = cachedIp;
+          } else {
+          // First API call to fetch User's IP address. If IP address is cached, skip this API call.
+          console.log('Making first API call')
           const userIpResponse = await fetch(`https://ipapi.co/json/`)
           const userIpData = await userIpResponse.json()
-          const userIp = await userIpData.ip
+          userIp = await userIpData.ip
+          localStorage.setItem('userIp', userIp);
+          }
 
           // Second API call to fetch complete User's IP Address information
           const userInformationResponse = await fetch(`/.netlify/functions/getIPAddress?ipAddress=${userIp}`)
