@@ -38,6 +38,7 @@
     left: 100px;
     animation: animate 1.5s ease infinite;
 }
+
 @keyframes animate {
     50% {
         left: -30px
