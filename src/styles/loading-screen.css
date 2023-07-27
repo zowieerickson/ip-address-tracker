@@ -11,10 +11,20 @@
   
   .loading-screen-copy {
     font-size: 2.2rem;
-    /* position: relative;
-    top: 200px; */
   }
+
+  @media screen and (max-width: 734px) {
+    .loading-screen-copy {
+        font-size: 1.8rem;
+    }
+}
 
   .loading-screen-icon {
     width: 100px;
   }
+
+  @media screen and (max-width: 734px) {
+    .loading-screen-icon {
+        width: 80px;
+    }
+}
