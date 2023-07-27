@@ -43,13 +43,3 @@
         left: -30px
     }
 }
-
-  .loading-icon {
-    width: 90px;
-  }
-
-  @media screen and (max-width: 734px) {
-    .loading-icon {
-        width: 80px;
-    }
-}
