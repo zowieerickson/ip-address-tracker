@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import LoadingScreen from "./LoadingScreen";
 import Header from "./Header";
 import Map from "./Map";
 
@@ -54,27 +55,22 @@ export default function DataWrapper() {
 
       return (
         <>
-        {isLoading ? 
-        
-        <div className="loading-screen">
-        <h1 className="loading-screen-copy">IP Address Tracker</h1> 
-        </div>
-        : 
-        
-        <>
-        <Header 
-            data={data}
-            error={error}
-            onStateChangeData={handleStateChangeData}
-            onStateChangeError={handleStateChangeError}
-        />
-        <Map
-            data={data}
-            error={error}
-        />
+          {isLoading ? 
+          <LoadingScreen />
+          : 
+          <>
+            <Header 
+                data={data}
+                error={error}
+                onStateChangeData={handleStateChangeData}
+                onStateChangeError={handleStateChangeError}
+            />
+            <Map
+                data={data}
+                error={error}
+            />
+          </>
+          }
         </>
-        }
-
-      </>
       )
 }
