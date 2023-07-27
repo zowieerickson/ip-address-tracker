@@ -9,23 +9,47 @@
     padding-top: 12em;
   }
   
-  .loading-screen-copy {
+  .loading-copy {
     font-size: 2.2rem;
     margin-bottom: .45em;
   }
 
   @media screen and (max-width: 734px) {
-    .loading-screen-copy {
+    .loading-copy {
         font-size: 1.8rem;
     }
 }
 
-  .loading-screen-icon {
+.loading-bar {
+    width: 140px;
+    height: 4px;
+    background: #ccc;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-bar::before {
+    content: "";
+    width: 65px;
+    height: 4px;
+    background: rgb(0, 72, 206);
+    position: absolute;
+    left: 100px;
+    animation: animate 1.5s ease infinite;
+}
+@keyframes animate {
+    50% {
+        left: -30px
+    }
+}
+
+  .loading-icon {
     width: 90px;
   }
 
   @media screen and (max-width: 734px) {
-    .loading-screen-icon {
+    .loading-icon {
         width: 80px;
     }
 }
