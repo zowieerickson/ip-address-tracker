@@ -16,3 +16,15 @@ br.large {
       display: none;
   }
 }
+
+.loading-screen {
+  height: 100vh;
+  background-color: #000;
+  color: #f3f4f8
+}
+
+.loading-screen-copy {
+  font-size: 2.2rem;
+  position: relative;
+  top: 200px;
+}

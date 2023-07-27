@@ -4,7 +4,8 @@ import Map from "./Map";
 
 export default function DataWrapper() {
     const [data, setData] = useState({})
-    const [error, setError] = useState({});
+    const [error, setError] = useState({})
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleStateChangeData = (newValue) => {
         setData(newValue)
@@ -15,6 +16,7 @@ export default function DataWrapper() {
 
     useEffect(() => {
       const cachedIp = localStorage.getItem('userIp')
+      setIsLoading(true)
 
       const fetchData = async () => {
         try {
@@ -43,12 +45,22 @@ export default function DataWrapper() {
           setError(error)
           console.log(error)
         }
+
+        setIsLoading(false)
       }
 
       fetchData()
     }, [])
 
       return (
+        <>
+        {isLoading ? 
+        
+        <div className="loading-screen">
+        <h1 className="loading-screen-copy">IP Address Tracker</h1> 
+        </div>
+        : 
+        
         <>
         <Header 
             data={data}
@@ -60,6 +72,9 @@ export default function DataWrapper() {
             data={data}
             error={error}
         />
+        </>
+        }
+
       </>
       )
 }
