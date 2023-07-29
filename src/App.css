@@ -16,3 +16,9 @@ br.large {
       display: none;
   }
 }
+
+.hide-app {
+  z-index: -2;
+  opacity: 0;
+  display: none;
+}
