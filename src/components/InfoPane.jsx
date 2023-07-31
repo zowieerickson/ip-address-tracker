@@ -93,7 +93,7 @@ export default function InfoPane({
                 <section className="info-item ">
                     <div className="info-details">
                         <h2 className="info-details-title">Location</h2>
-                        <p className="info-details-body">{data.location.city}, {stateNameToAbbreviation(data.location.region) ? stateNameToAbbreviation(data.location.region) : data.location.region}<br className="large" />{data.location.postalCode}</p>
+                        <p className="info-details-body">{data.location.city}, {stateNameToAbbreviation(data.location.region) ? stateNameToAbbreviation(data.location.region) : data.location.region} <br className="large" />{data.location.postalCode}</p>
                     </div>
                 </section>
                 <section className="info-item ">
