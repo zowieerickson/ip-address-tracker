@@ -47,25 +47,18 @@ Users should be able to:
 - CSS Grid
 - CSS animations
 - 3rd-party APIs
+- localStorage
 - Serverless functions
 - [React](https://reactjs.org/) - JS library
 - [Open Graph](https://ogp.me/) - Internet protocol
 - [Vite](https://vitejs.dev/) - Build tool
 
 ### What I learned
+I learned an incredible amount upon completing this IP Address tracker app using 3rd party APIs. The idea of security, performance, and user experience (UX) were all on my mind as I was going through creating this app. These concepts were very important to me, and I wanted to show that with how I created this project.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Starting off with security, I learned the importance of securing your API key in your applications. There are bad actors everywhere, and if one were to come accross your API key, they could run up the cost with your API provider by an obscene amount. This prompted me to research how to do properly protect my API key in this project. I learned one method that did the trick, and wrote my first-ever serverless function to hide my API key.
 
-To see how you can add code snippets, see below:
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-
-I was really proud of this function because it's the first serverless function I've ever wrote! I spent hours upon hours trying to find ways of securing my API key, and this played a massive role in accomplishing that goal.
+This took hours and hours of research and writing incorrect syntax, but I was really proud of my first serverless function.
 ```js
 const axios = require('axios');
 
@@ -124,6 +117,57 @@ exports.handler = async (event, context) => {
     };
   }
 };
+```
+
+Expanding on this, performance was another important focus point of this app. For instance, upon loading the app, the user's IP address would be fetched from an API call, which would then chain into a second API call that displays more information about the user's IP address, such as location and ISP provider. However, the user's IP address isn't likely to change, so I thought it would be a good idea to save the user's IP address to reduce the number of API requests if the user were to refresh or revisit the app. This reduced the number of initial API calls from 2 to 1, which is *technically* a 50% reduction!
+
+With how to store the user's IP address, ``localStorage`` ended up being a great option. However, before deciding on ``localStorage``, this led me down the rabbit hole about the differences between ``localStorage`` and ``sessionStorage``. The key difference I learned was how data in ``localStorage`` doesn't expire while data in ``sessionStorage`` is cleared when the page session ends. Knowing this, ``localStorage`` felt like the best call.
+
+
+This project also pushed me to learn more about React, and I learned to use a new React hook: 
+```useEffect(() => {})```
+I got deep into the different behaviors of ``useEffect``, such as when you would want it to run. For example,running after every render, only on mount, or on mount *and also* if items in the dependency array have changed. For instance, per the official React documentation:
+```js
+useEffect(() => {
+  // This runs after every render
+});
+
+useEffect(() => {
+  // This runs only on mount (when the component appears)
+}, []);
+
+useEffect(() => {
+  // This runs on mount *and also* if either a or b have changed since the last render
+}, [a, b]);
+```
+
+-- BEGIN USER EXPERIENCE LEARNINGS HERE --
+Writing CSS animations is always fun! These are the styles for the loading bar animation that the user sees when first loading the app.
+```css
+.loading-bar {
+    width: 140px;
+    height: 4px;
+    background: #ccc;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-bar::before {
+    content: "";
+    width: 65px;
+    height: 4px;
+    background: rgb(0, 72, 206);
+    position: absolute;
+    left: 100px;
+    animation: animate 1.5s ease infinite;
+}
+
+@keyframes animate {
+    50% {
+        left: -30px
+    }
+}
 ```
 
 ### Continued development

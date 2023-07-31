@@ -7,7 +7,7 @@
     justify-content: flex-start;
     align-items: center;
     padding-top: 12em;
-    z-index: 10000;
+    z-index: 1;
   }
   
   .loading-copy {
