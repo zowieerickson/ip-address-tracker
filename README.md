@@ -42,15 +42,15 @@ Users should be able to:
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS3 styles
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
+- CSS animations
+- 3rd-party APIs
+- Serverless functions
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Open Graph](https://ogp.me/) - Internet protocol
+- [Vite](https://vitejs.dev/) - Build tool
 
 ### What I learned
 
@@ -58,23 +58,73 @@ Use this section to recap over some of your major learnings while working throug
 
 To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
 ```css
 .proud-of-this-css {
   color: papayawhip;
 }
 ```
+
+
+I was really proud of this function because it's the first serverless function I've ever wrote! I spent hours upon hours trying to find ways of securing my API key, and this played a massive role in accomplishing that goal.
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+const axios = require('axios');
+
+exports.handler = async (event, context) => {
+  // API key should be stored as an environment variable on Netlify
+  const apiKey = process.env.IP_API_KEY;
+
+  try {
+    // Check if the request has the 'ipAddress' or 'domain' query parameter
+    const ipAddress = event.queryStringParameters.ipAddress;
+    const domain = event.queryStringParameters.domain;
+
+    if (ipAddress) {
+      // Make the API request to the IP Geolocation API with the 'ipAddress' parameter
+      const response = await axios.get(
+        `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ipAddress}`
+      );
+
+      // Extract the data from the response
+      const data = response.data;
+
+      // Return the result to the client
+      return {
+        statusCode: 200,
+        body: JSON.stringify(data),
+      };
+    } else if (domain) {
+      // Make the API request to the IP Geolocation API with the 'domain' parameter
+      const response = await axios.get(
+        `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&domain=${domain}`
+      );
+
+      // Extract the data from the response
+      const data = response.data;
+
+      // Return the result to the client
+      return {
+        statusCode: 200,
+        body: JSON.stringify(data),
+      };
+    } else {
+      // Return an error response if neither 'ipAddress' nor 'domain' query parameter is provided
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: 'Invalid query parameters' }),
+      };
+    }
+  } catch (error) {
+    // Handle any errors that occurred during the API request
+    console.error('Error fetching IP information:', error);
+
+    // Return an error response to the client
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Failed to fetch IP information' }),
+    };
+  }
+};
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
