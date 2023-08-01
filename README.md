@@ -142,7 +142,8 @@ useEffect(() => {
 ```
 
 -- BEGIN USER EXPERIENCE LEARNINGS HERE --
-![Loading screen GIF](https://github.com/zowieerickson/ip-address-tracker/assets/67253233/85c2cd59-54a3-47e5-adf3-6434ecb9e688)
+![Loading screen GIF](./public/gifs/loading-screen.gif)
+![Error message screen](./public/screenshots/error-screen.png)
 
 
 Writing CSS animations is always fun! These are the styles for the loading bar animation that the user sees when first loading the app.
