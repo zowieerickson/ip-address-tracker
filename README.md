@@ -56,7 +56,7 @@ Users should be able to:
 ### What I learned
 I learned an incredible amount upon completing this IP Address tracker app using 3rd party APIs. The idea of security, performance, and user experience (UX) were all on my mind as I was going through creating this app. These concepts were very important to me, and I wanted to show that with how I created this project.
 
-Starting off with security, I learned the importance of securing your API key in your applications. There are bad actors everywhere, and if one were to come accross your API key, they could run up the cost with your API provider by an obscene amount. This prompted me to research how to do properly protect my API key in this project. I learned one method that did the trick, and wrote my first-ever serverless function to hide my API key.
+Beginning with security, I learned the importance of securing your API key in your applications. There are bad actors everywhere, and if one were to come accross your API key, they could run up the cost with your API provider by an obscene amount. This prompted me to research how to do properly protect my API key in this project. I learned one method that did the trick, and wrote my first-ever serverless function to hide my API key.
 
 This took hours and hours of research and writing incorrect syntax, but I was really proud of my first serverless function.
 ```js
@@ -119,7 +119,7 @@ exports.handler = async (event, context) => {
 };
 ```
 
-Expanding on this, performance was another important focus point of this app. For instance, upon loading the app, the user's IP address would be fetched from an API call, which would then chain into a second API call that displays more information about the user's IP address, such as location and ISP provider. However, the user's IP address isn't likely to change, so I thought it would be a good idea to save the user's IP address to reduce the number of API requests if the user were to refresh or revisit the app. This reduced the number of initial API calls from 2 to 1, which is *technically* a 50% reduction!
+Expanding on this, performance was also a large focus point of this app. For instance, upon loading the app the user's IP address would be fetched from an API call, which would then chain into a second API call that displays more information about the user's IP address, such as location and ISP provider. However, the user's IP address isn't likely to change, so I thought it would be a good idea to save the user's IP address to reduce the number of API requests if the user were to refresh or revisit the app. This reduced the number of initial API calls from 2 to 1, which is *technically* a 50% reduction!
 
 With how to store the user's IP address, ``localStorage`` ended up being a great option. However, before deciding on ``localStorage``, this led me down the rabbit hole about the differences between ``localStorage`` and ``sessionStorage``. The key difference I learned was how data in ``localStorage`` doesn't expire while data in ``sessionStorage`` is cleared when the page session ends. Knowing this, ``localStorage`` felt like the best call.
 
@@ -142,6 +142,7 @@ useEffect(() => {
 ```
 
 -- BEGIN USER EXPERIENCE LEARNINGS HERE --
+![./public/gifs/loading-screen.gif]()
 Writing CSS animations is always fun! These are the styles for the loading bar animation that the user sees when first loading the app.
 ```css
 .loading-bar {
