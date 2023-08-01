@@ -141,12 +141,13 @@ useEffect(() => {
 }, [a, b]);
 ```
 
--- BEGIN USER EXPERIENCE LEARNINGS HERE --
+Lastly, a lot of time went into building a good user experience (UX). As previously mentioned, a couple API calls are made when the user first loads the app. Mimicking other sites and popular apps, I added a loading screen for that initial load, giving the API calls to finish fetching. This seemed like the right approach because while data is coming in from the API, the user understands something is happening from the loading screen. Then, once the fetching of data is completed, the loading screen disappears like the pulling back of curtains, and the app is ready for them to use in its entirety. This is far different from if there wasn't a loading screen. The user would instead see parts of the app loading, component by component, instead of getting the full picture all at once.
+
+Here is the loading screen the user will upon loading the app:
 ![Loading screen GIF](./public/gifs/loading-screen.gif)
-![Error message screen](./public/screenshots/error-screen.png)
 
+Code for the loading screen (writing CSS animations is always fun):
 
-Writing CSS animations is always fun! These are the styles for the loading bar animation that the user sees when first loading the app.
 ```css
 .loading-bar {
     width: 140px;
@@ -173,6 +174,12 @@ Writing CSS animations is always fun! These are the styles for the loading bar a
     }
 }
 ```
+
+Another user experience feature was adding an error page, similar to search engines like Google or Bing, where if the search has no matches, an error page is shown.
+
+The error page:
+![Error message screen](./public/screenshots/error-screen.png)
+
 
 ### Continued development
 
