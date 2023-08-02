@@ -14,7 +14,6 @@ This is a solution to the [IP address tracker challenge on Frontend Mentor](http
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 **Note: Delete this note and update the table of contents based on what sections you keep.**
 
@@ -189,8 +188,9 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [React documentation](https://react.dev/learn) - This helped me understand the ``useEffect()`` hook in great detail, which was needed for the API calls.
+- [Netlify serverless functions](https://www.netlify.com/blog/intro-to-serverless-functions/) - This is an amazing article which helped introduce me to serverless functions when it came to Netlify. Through this and a few other resources, I was able to hide my API key when fetching for data.
+
 
 ## Author
 

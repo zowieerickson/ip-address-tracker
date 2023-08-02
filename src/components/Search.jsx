@@ -62,7 +62,7 @@ export default function Search({
             placeholder={window.innerWidth > 450 ? "Search for any IP address or domain" : "Search IP addresses"}
             name="q" 
             />
-            <SearchButton onClick={e => setInputSearch(inputSearchValue)}></SearchButton>
+            <SearchButton onClick={e => setInputSearch(inputSearchValue)} ariaLabel="Submit search"></SearchButton>
         </div>
     )
 }
