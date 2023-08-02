@@ -46,10 +46,6 @@
     }
 }
 
-.info-item {
-    display: flex;
-}
-
 .info-details {
     text-align: left;
     flex-grow: 1;

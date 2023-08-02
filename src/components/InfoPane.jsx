@@ -84,30 +84,22 @@ export default function InfoPane({
             {error.length > 1 ? ''
             :
             <section className="info">
-                <section className="info-item ">
                     <div className="info-details first">
                         <h2 className="info-details-title">IP Address</h2>
                         <p className="info-details-body">{data.ip}</p>
                     </div>
-                </section>
-                <section className="info-item ">
                     <div className="info-details">
                         <h2 className="info-details-title">Location</h2>
                         <p className="info-details-body">{data.location.city}, {stateNameToAbbreviation(data.location.region) ? stateNameToAbbreviation(data.location.region) : data.location.region} <br className="large" />{data.location.postalCode}</p>
                     </div>
-                </section>
-                <section className="info-item ">
                     <div className="info-details">
                         <h2 className="info-details-title">Timezone</h2>
                         <p className="info-details-body">UTC {data.location.timezone}</p>
                     </div>
-                </section>
-                <section className="info-item ">
                     <div className="info-details">
                         <h2 className="info-details-title">ISP</h2>
                         <p className="info-details-body">{data.isp}</p>
                     </div>
-                </section>
             </section>
             }
         </>
