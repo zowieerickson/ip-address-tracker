@@ -179,18 +179,15 @@ Another user experience feature was adding an error page, similar to search engi
 The error page:
 ![Error message screen](./public/screenshots/error-screen.png)
 
-
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+Moving forward to future projects, some areas that I want to continue focusing on are user experience, accessibility, and security. I want to understand serverless functions on a deeper level and incorporate them into more projects, especially when I need to do something like hide an API key from the user.
 
 ### Useful resources
 
 - [React documentation](https://react.dev/learn) - This helped me understand the ``useEffect()`` hook in great detail, which was needed for the API calls.
 - [Netlify serverless functions](https://www.netlify.com/blog/intro-to-serverless-functions/) - This is an amazing article which helped introduce me to serverless functions when it came to Netlify. Through this and a few other resources, I was able to hide my API key when fetching for data.
-
+- [Button accessibility](https://dequeuniversity.com/rules/axe/4.7/button-nam) - This article helped me improve the accessibility of this app when it came to buttons and how "Buttons must have discernible text". My search button at first didn't have any discernible text, but thanks to this article, an aria-label was sufficient for screen readers.
 
 ## Author
 
