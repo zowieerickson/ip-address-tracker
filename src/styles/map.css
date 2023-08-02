@@ -1,6 +1,9 @@
 .leaflet-container { 
     height: 70vh;
-    z-index: -1;
+}
+
+.leaflet-pane {
+    z-index: 1;
 }
 
 @media screen and (max-width: 734px) {

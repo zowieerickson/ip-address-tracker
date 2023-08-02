@@ -36,17 +36,19 @@ const URL = `https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png`;
       <>
       {error.length > 1 ? 
         <ErrorMessage /> :
-        <MapContainer center={newLocation} zoom={16}>
-            <TileLayer url={URL} />
-            <Marker position={newLocation}>
-            <Popup>
-                <b>{data.ip}</b>
-                <br />
-                {data.location.city}, {data.location.region}, {data.location.country}
-            </Popup>
-            </Marker>
-            <ChangeMapView coords={newLocation} />
-        </MapContainer>
+        <main>
+          <MapContainer center={newLocation} zoom={16}>
+              <TileLayer url={URL} />
+              <Marker position={newLocation}>
+              <Popup>
+                  <b>{data.ip}</b>
+                  <br />
+                  {data.location.city}, {data.location.region}, {data.location.country}
+              </Popup>
+              </Marker>
+              <ChangeMapView coords={newLocation} />
+          </MapContainer>
+        </main>
       }
       </>
     )
