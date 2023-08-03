@@ -140,12 +140,12 @@ useEffect(() => {
 }, [a, b]);
 ```
 
-Lastly, a lot of time went into building a good user experience (UX). As previously mentioned, a couple API calls are made when the user first loads the app. Mimicking other sites and popular apps, I added a loading screen for that initial load, giving the API calls to finish fetching. This seemed like the right approach because while data is coming in from the API, the user understands something is happening from the loading screen. Then, once the fetching of data is completed, the loading screen disappears like the pulling back of curtains, and the app is ready for them to use in its entirety. This is far different from if there wasn't a loading screen. The user would instead see parts of the app loading, component by component, instead of getting the full picture all at once.
+Lastly, a lot of time went into building a good user experience (UX). As previously mentioned, a couple API calls are made when the user first loads the app. Mimicking other sites and popular apps, I added a a loading screen for the initial load, giving the API calls to finish fetching. This seemed like the right approach because while data is coming in from the API, the user understands something is happening from the loading screen. Then, once the fetching of data is completed, the loading screen disappears like the pulling back of curtains, and the app is ready for them to use in its entirety. This is far different from if there wasn't a loading screen. The user would instead see parts of the app loading, component by component, instead of getting the full picture all at once.
 
 Here is the loading screen the user will upon loading the app:
 ![Loading screen GIF](./public/gifs/loading-screen.gif)
 
-Code for the loading screen (writing CSS animations is always fun):
+Code for the loading screen (writing CSS animations is always enjoyable.):
 
 ```css
 .loading-bar {
@@ -186,7 +186,7 @@ Moving forward to future projects, some areas that I want to continue focusing o
 ### Useful resources
 
 - [React documentation](https://react.dev/learn) - This helped me understand the ``useEffect()`` hook in great detail, which was needed for the API calls.
-- [Netlify serverless functions](https://www.netlify.com/blog/intro-to-serverless-functions/) - This is an amazing article which helped introduce me to serverless functions when it came to Netlify. Through this and a few other resources, I was able to hide my API key when fetching for data.
+- [Netlify serverless functions](https://www.netlify.com/blog/intro-to-serverless-functions/) - This is an amazing article which helped introduce me to serverless functions when it came to Netlify. Through this and a few other resources, I was able to hide my API key when fetching data.
 - [Button accessibility](https://dequeuniversity.com/rules/axe/4.7/button-nam) - This article helped me improve the accessibility of this app when it came to buttons and how "Buttons must have discernible text". My search button at first didn't have any discernible text, but thanks to this article, an aria-label was sufficient for screen readers.
 
 ## Author
