@@ -46,7 +46,7 @@ Users should be able to:
 - CSS Grid
 - CSS animations
 - 3rd-party APIs
-- localStorage
+- sessionStorage
 - Serverless functions
 - [React](https://reactjs.org/) - JS library
 - [Open Graph](https://ogp.me/) - Internet protocol
@@ -120,7 +120,7 @@ exports.handler = async (event, context) => {
 
 Expanding on this, performance was also a large focus point of this app. For instance, upon loading the app the user's IP address would be fetched from an API call, which would then chain into a second API call that displays more information about the user's IP address, such as location and ISP provider. However, the user's IP address isn't likely to change, so I thought it would be a good idea to save the user's IP address to reduce the number of API requests if the user were to refresh or revisit the app. This reduced the number of initial API calls from 2 to 1, which is *technically* a 50% reduction!
 
-With how to store the user's IP address, ``localStorage`` ended up being a great option. However, before deciding on ``localStorage``, this led me down the rabbit hole about the differences between ``localStorage`` and ``sessionStorage``. The key difference I learned was how data in ``localStorage`` doesn't expire while data in ``sessionStorage`` is cleared when the page session ends. Knowing this, ``localStorage`` felt like the best call.
+With how to store the user's IP address, ``sessionStorage`` ended up being a great option. However, before deciding on ``sessionStorage``, this led me down the rabbit hole about the differences between ``localStorage`` and ``sessionStorage``. The key difference I learned was how data in ``localStorage`` doesn't expire while data in ``sessionStorage`` is cleared when the page session ends. Knowing this, ``sessionStorage`` felt like the best call.
 
 
 This project also pushed me to learn more about React, and I learned to use a new React hook: 
