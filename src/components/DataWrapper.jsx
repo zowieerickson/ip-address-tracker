@@ -55,7 +55,7 @@ export default function DataWrapper() {
 
       return (
         <>
-          {isLoading && <LoadingScreen /> }
+          {isLoading && <LoadingScreen />}
           <div className={isLoading ? "hide-app" : ""}>
             <Header 
                 data={data}
