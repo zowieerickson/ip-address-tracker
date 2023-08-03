@@ -16,7 +16,7 @@ export default function DataWrapper() {
     }
 
     useEffect(() => {
-      const cachedIp = localStorage.getItem('userIp')
+      const cachedIp = sessionStorage.getItem('userIp')
       setIsLoading(true)
 
       const fetchData = async () => {
@@ -32,7 +32,7 @@ export default function DataWrapper() {
           }
           const userIpData = await userIpResponse.json()
           userIp = await userIpData.ip
-          localStorage.setItem('userIp', userIp);
+          sessionStorage.setItem('userIp', userIp);
           }
 
           // Second API call to fetch complete User's IP Address information
