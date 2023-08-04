@@ -1,5 +1,5 @@
 .leaflet-container { 
-    height: 70vh;
+    height: 85vh;
 }
 
 .leaflet-container:focus-visible, .leaflet-marker-icon:focus-visible, .leaflet-popup-close-button:focus-visible {
