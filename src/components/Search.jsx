@@ -44,18 +44,19 @@ export default function Search({
         }
       }, [inputSearch]);
     
-    function handleKeyDown(e) {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            setInputSearch(e.target.value)
-        }
+    function onSubmit(e) {
+        e.preventDefault();
+        setInputSearch(e.target.value)
     }
 
     return (
-        <div className="search-wrapper">
-            <input 
+        <form action="/my-handling-form-page-PLACEHOLDER" method="get" className="search-wrapper" onSubmit={onSubmit}>
+            <input
+            aria-label="Search IP addresses or domains"
+            autocorrect="off" 
+            autocapitalize="off"
+            autocomplete="off" 
             onChange={updateInput}
-            onKeyDown={handleKeyDown}
             value={inputSearchValue}
             type="search" 
             className="search" 
@@ -63,6 +64,6 @@ export default function Search({
             name="q" 
             />
             <SearchButton onClick={e => setInputSearch(inputSearchValue)} ariaLabel="Submit search"></SearchButton>
-        </div>
+        </form>
     )
 }
