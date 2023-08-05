@@ -13,7 +13,7 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 // Stadia Map
-const URL = `https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png`;
+const mapUrl = `https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png`;
 
   export default function Map({
     data,
@@ -38,7 +38,7 @@ const URL = `https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png`;
         <ErrorMessage /> :
         <main>
           <MapContainer center={newLocation} zoom={16}>
-              <TileLayer url={URL} />
+              <TileLayer url={mapUrl} />
               <Marker position={newLocation}>
               <Popup>
                   <b>{data.ip}</b>
