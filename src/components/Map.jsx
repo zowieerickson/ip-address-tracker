@@ -34,9 +34,8 @@ const mapUrl = `https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png
 
     return (
       <>
-      {error.length > 1 ? 
-        <ErrorMessage /> :
-        <main>
+      {error.length > 1 && <ErrorMessage />}
+        <main hidden={error.length > 1 ? true : false}>
           <MapContainer center={newLocation} zoom={16}>
               <TileLayer url={mapUrl} />
               <Marker position={newLocation}>
@@ -49,7 +48,6 @@ const mapUrl = `https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png
               <ChangeMapView coords={newLocation} />
           </MapContainer>
         </main>
-      }
       </>
     )
 }
