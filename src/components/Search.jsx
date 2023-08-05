@@ -43,14 +43,9 @@ export default function Search({
             });
         }
       }, [inputSearch]);
-    
-    function onSubmit(e) {
-        e.preventDefault();
-        setInputSearch(e.target.value)
-    }
 
     return (
-        <form action="#" method="get" className="search-wrapper" onSubmit={onSubmit}>
+        <form action="#" method="get" className="search-wrapper" onSubmit={(e) => e.preventDefault()}>
             <input
             aria-label="Search IP addresses or domains"
             autoCorrect="off" 
@@ -63,7 +58,7 @@ export default function Search({
             placeholder={window.innerWidth > 450 ? "Search for any IP address or domain" : "Search IP addresses"}
             name="q" 
             />
-            <SearchButton  onClick={e => setInputSearch(inputSearchValue)}></SearchButton>
+            <SearchButton  onClick={() => setInputSearch(inputSearchValue)}></SearchButton>
         </form>
     )
 }
