@@ -28,7 +28,7 @@ export default function Search({
           fetch(apiUrl)
           .then(response => {
               if(!response.ok) {
-                  throw new Error("Failed to fetch user IP address information. Please check number of available requests associated with the API key at https://geo.ipify.org/statistics. The search may also not contain a valid IP address or domain. Please check spelling");
+                  throw new Error("Failed to fetch user IP address information. Please check number of available requests associated with the API key at https://geo.ipify.org/statistics. The search may also not contain a valid IP address or domain. Please check spelling.");
                 } else {
                     onStateChangeError('')
                     return response.json()
