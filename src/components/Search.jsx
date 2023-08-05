@@ -50,12 +50,12 @@ export default function Search({
     }
 
     return (
-        <form action="/my-handling-form-page-PLACEHOLDER" method="get" className="search-wrapper" onSubmit={onSubmit}>
+        <form action="#" method="get" className="search-wrapper" onSubmit={onSubmit}>
             <input
             aria-label="Search IP addresses or domains"
-            autocorrect="off" 
-            autocapitalize="off"
-            autocomplete="off" 
+            autoCorrect="off" 
+            autoCapitalize="off"
+            autoComplete="off" 
             onChange={updateInput}
             value={inputSearchValue}
             type="search" 
@@ -63,7 +63,7 @@ export default function Search({
             placeholder={window.innerWidth > 450 ? "Search for any IP address or domain" : "Search IP addresses"}
             name="q" 
             />
-            <SearchButton onClick={e => setInputSearch(inputSearchValue)} ariaLabel="Submit search"></SearchButton>
+            <SearchButton  onClick={e => setInputSearch(inputSearchValue)}></SearchButton>
         </form>
     )
 }
