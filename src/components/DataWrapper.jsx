@@ -56,7 +56,7 @@ export default function DataWrapper() {
       return (
         <>
           {isLoading && <LoadingScreen />}
-          <div className={isLoading ? "hide-app" : ""}>
+          <div id="app" hidden={isLoading ? true : false}>
             <Header 
                 data={data}
                 error={error}
