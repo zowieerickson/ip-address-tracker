@@ -63,10 +63,17 @@ export default function DataWrapper() {
                 onStateChangeData={handleStateChangeData}
                 onStateChangeError={handleStateChangeError}
             />
-            <Map
+            <h1>Map should be here</h1>
+            <h1>Map should be here</h1>
+            <h1>Map should be here</h1>
+            <h1>Map should be here</h1>
+            <h1>Map should be here</h1>
+            <h1>Map should be here</h1>
+            <h1>Map should be here</h1>
+            {/* <Map
                 data={data}
                 error={error}
-            />
+            /> */}
           </div>
         </>
       )
