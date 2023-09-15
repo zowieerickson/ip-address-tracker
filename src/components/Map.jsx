@@ -13,7 +13,6 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 // Stadia Map
-// const mapUrl = `https://tile.openstreetmap.org/{z}/{x}/{y}.png`;
 const mapUrl = `https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png`;
 
   export default function Map({
